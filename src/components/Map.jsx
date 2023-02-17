@@ -3,9 +3,10 @@ import { geolocationAddresses } from "../helpers/geolocation";
 import store from "../assets/bxs-store.svg"
 import {FavoriteStores} from "./FavoriteStores"
 import { useState } from "react";
+import { API_KEY } from "../helpers/apiKey";
 
 export const Map = () => {
-  const { isLoaded } = useLoadScript({ googleMapsApiKey: "AIzaSyDMfVZT89Ler-GKBgvzZPhE82eWJHYbLRM" });
+  const { isLoaded } = useLoadScript({ googleMapsApiKey: API_KEY });
   const [stores, setStores] = useState([]);
   const onClickHandler = (Nombre)=>{
     setStores([...stores,Nombre])
